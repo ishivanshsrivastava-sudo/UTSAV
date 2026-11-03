@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Utsav – Every celebration, planned in one place</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--soft:#fdeee8;--ink:#1d2545;--mut:#6b7190;--line:#e6e8f0;--card:#fff;--navy:#1d2545;--terra:#b8503d;--or:#f57c1f;--hi:#fde9dc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16141d;--soft:#241a1f;--ink:#f3ece8;--mut:#a9a6bb;--line:#33304a;--card:#211f2e;--hi:#43291f;color-scheme:dark}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font:15px/1.5 Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0;color:var(--ink)}
+.w{max-width:1080px;margin:auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.lg{font:800 24px 'Playfair Display',serif;color:var(--terra);line-height:1}.lg small{display:block;font:500 8px Inter;letter-spacing:.1em;color:var(--mut)}
+nav .l a{color:var(--ink);text-decoration:none;margin:0 12px;font-size:14px;font-weight:500}
+.btn{border:0;cursor:pointer;font:600 14px Inter;padding:10px 20px;border-radius:8px;color:#fff;background:var(--or);text-decoration:none;display:inline-block}
+.btn.t{background:var(--terra)}.btn.o{background:transparent;color:var(--or);border:1px solid var(--or);padding:7px 10px;font-size:12px}
+.btn.o.on{background:var(--or);color:#fff}
+.hero{background:linear-gradient(120deg,var(--soft),var(--bg) 70%);padding:50px 0 60px}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(34px,5.5vw,58px);line-height:1.1;margin-bottom:14px}
+.hero p{color:var(--mut);max-width:440px}
+.panel{background:var(--card);border-radius:14px;box-shadow:0 8px 30px #1d25451f;padding:16px;margin-top:22px;max-width:520px}
+.panel b{font-size:13px}.occ{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:10px 0}
+.occ button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 2px;font:600 10px Inter;cursor:pointer}
+.occ button span{display:block;font-size:20px}.occ button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;align-items:end}
+label{font-size:10px;color:var(--mut);font-weight:600}select,input{width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:13px Inter}
+.art{position:relative;height:320px}
+.petal{position:absolute;border-radius:50% 50% 50% 50%/70% 70% 30% 30%;background:var(--terra)}
+.fl{position:absolute;background:var(--card);border-radius:10px;box-shadow:0 6px 20px #1d254522;padding:8px 12px;font-size:12px}.fl b{display:block}.fl small{color:var(--mut)}
+section.s{padding:56px 0}
+.h{margin-bottom:6px;font-size:30px}.sub{color:var(--mut);margin:0 0 24px;font-size:14px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tile{border-radius:14px;color:#fff;padding:60px 18px 18px;position:relative;overflow:hidden;cursor:pointer;border:0;text-align:left;font-family:inherit}
+.tile:hover{transform:translateY(-3px)}.tile{transition:.2s}
+.tile b{display:block;font:700 18px 'Playfair Display',serif}.tile small{opacity:.85;font-size:12px}.tile i{position:absolute;right:14px;top:12px;font-size:30px;font-style:normal}
+.tile:after{content:"";position:absolute;right:-20px;bottom:-30px;width:90px;height:90px;border-radius:50%;background:#ffffff22}
+.res{background:var(--soft)}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:14px 0 18px}
+.tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:8px 14px;font:600 13px Inter;color:var(--mut);cursor:pointer}.tabs button.on{color:var(--or);border-color:var(--or)}
+.live{float:right;font-size:11px;background:#dff5e6;color:#1e7d46;padding:4px 10px;border-radius:20px;font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vc{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px #1d25451a}
+.vc .im{height:96px;display:grid;place-items:center;font-size:34px;color:#fff}
+.vc .b{padding:14px}.bd{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:#dff5e6;color:#1e7d46}.bd.p{background:#fff1cf;color:#8a6200}
+.vc h3{font:700 16px 'Playfair Display',serif;margin:8px 0 2px}.vc small{color:var(--mut)}
+.pr{font:700 20px Inter;color:var(--or);margin:8px 0}.vc .a{display:flex;gap:6px}.vc .a .btn{flex:1;text-align:center}
+.cmp{overflow-x:auto;background:var(--card);border-radius:12px;padding:20px;box-shadow:0 2px 12px #1d25451a}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:13px}
+th{background:var(--navy);color:#fff;padding:10px}td{padding:11px;border:1px solid var(--line);text-align:center}td:first-child{text-align:left;font-weight:600}td.best{background:var(--hi);font-weight:700}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.st{display:flex;gap:12px;margin-bottom:16px}.st i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font:700 13px Inter;font-style:normal}.st b{display:block}.st small{color:var(--mut)}
+.plan{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 2px 12px #1d25451a}
+.pi{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px}
+.tot{display:flex;justify-content:space-between;font-weight:700;margin-top:12px;font-size:16px}
+.bar{height:7px;border-radius:5px;background:var(--line);margin:8px 0 4px;overflow:hidden}.bar div{height:100%;background:var(--terra)}
+.cta{background:var(--navy);color:#fff;text-align:center;padding:50px 20px;margin-top:50px;border-radius:14px}.cta h2{color:#fff}.cta p{opacity:.75}
+footer{text-align:center;padding:28px;color:var(--mut);font-size:13px}
+@media(max-width:800px){.hero .w,.two{grid-template-columns:1fr}.art{display:none}.tiles,.cards{grid-template-columns:1fr 1fr}nav .l{display:none}.row{grid-template-columns:1fr 1fr}.occ{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.tiles,.cards{grid-template-columns:1fr}}
+</style></head><body>
+<nav><div class="w"><div class="lg">Utsav<small>Plan • Book • Celebrate</small></div>
+<div class="l"><a href="#home">Find vendors</a><a href="#compare">Compare</a><a href="#how">How it works</a><a href="#plan">Planner</a></div>
+<a class="btn" href="#home">Start planning</a></div></nav>
+
+<header class="hero" id="home"><div class="w"><div>
+<h1>Every celebration, planned in one place</h1>
+<p>Stop calling twenty vendors. Pick your occasion, add city and budget, and compare live prices and availability for hotels, DJs and decorators.</p>
+<div class="panel"><b>What are you celebrating?</b>
+<div class="occ" id="occ"></div>
+<div class="row"><div><label>City</label><select id="city"><option>Delhi</option><option>Mumbai</option><option>Lucknow</option><option>Jaipur</option></select></div>
+<div><label>Date</label><input type="date" id="date"></div>
+<div><label>Budget (₹)</label><select id="bud"><option value="100000">Under 1 lakh</option><option value="500000">Under 5 lakh</option><option value="1500000" selected>Under 15 lakh</option><option value="99999999">Any budget</option></select></div>
+<button class="btn t" id="go">Search live</button></div></div></div>
+<div class="art"><div class="petal" style="width:90px;height:170px;left:150px;top:90px;opacity:.85"></div><div class="petal" style="width:80px;height:150px;left:60px;top:150px;transform:rotate(-40deg);background:#e08a6b"></div><div class="petal" style="width:80px;height:150px;left:240px;top:150px;transform:rotate(40deg);background:#9e3f30"></div>
+<div class="fl" style="right:0;top:30px"><b>🏛 Royal Orchid</b><small>Open 22 Nov • ₹1,450/plate</small></div>
+<div class="fl" style="right:-4px;top:150px"><b>🎧 DJ Aarav</b><small>₹85,000 • live price</small></div>
+<div class="fl" style="left:10px;top:260px"><b>💐 Phool &amp; Co.</b><small>Decor from ₹90,000</small></div></div></div></header>
+
+<section class="s" id="plan-any"><div class="w"><h2 class="h">Plan any celebration</h2><p class="sub">Choose an occasion and see vendors made for it.</p><div class="tiles" id="tiles"></div></div></section>
+
+<section class="s res" id="results"><div class="w"><span class="live" id="live">● Live data • updated just now</span>
+<h2 class="h" id="rt"></h2><p class="sub" id="rs">Live vendors matching your search.</p>
+<div class="tabs" id="tabs"></div><div class="cards" id="cards"></div></div></section>
+
+<section class="s" id="compare"><div class="w"><h2 class="h">Compare shortlisted venues</h2><p class="sub">Add up to 3 venues from the results above.</p><div class="cmp" id="cmp"></div></div></section>
+
+<section class="s" id="how"><div class="w"><div class="two" id="plan"><div><h2 class="h">From idea to booked in four steps</h2><p class="sub">Honest numbers at every step.</p>
+<div class="st"><i>1</i><div><b>Tell us about your event</b><small>Occasion, city, date and budget.</small></div></div>
+<div class="st"><i>2</i><div><b>Get live options</b><small>Verified prices and availability for hotels, DJs and decorators.</small></div></div>
+<div class="st"><i>3</i><div><b>Compare and shortlist</b><small>Side by side — unknown details are clearly flagged.</small></div></div>
+<div class="st"><i>4</i><div><b>Send enquiries in one go</b><small>One tap to contact every vendor in your plan.</small></div></div></div>
+<div class="plan"><b>Your event plan</b><div id="pl"></div><div class="tot"><span>Estimated total</span><span id="tt"></span></div><div class="bar"><div id="pb"></div></div><small id="pn" style="color:var(--mut)"></small></div></div>
+<div class="cta"><h2>Your next celebration deserves less stress</h2><p>Search once, compare honestly, and book with confidence.</p><a class="btn" href="#home">Start planning free</a></div></div></section>
+<footer>© 2026 Utsav • Plan • Book • Celebrate</footer>
+
+<script>
+const O=[['Wedding','💍','Weddings','Venues, mandaps, banquet halls','#c24f3a,#e0795e'],['Engagement','💐','Engagements','Intimate venues and floral decor','#d63c6a,#ec5f86'],['Birthday','🎂','Birthdays','Party halls, themes, music','#2f66d9,#4b86e8'],['Corporate','🥂','Corporate parties','Banquets, AV and entertainment','#12877f,#2fb5ab'],['Anniversary','💗','Anniversaries','Romantic dinners and celebrations','#6f3fc4,#8d5be0'],['Baby shower','🍼','Baby showers','Cozy venues and soft decor','#d4651a,#f58a3a']];
+const V=[
+['v1','venue','Royal Orchid Banquet','Delhi',980000,4.6,400,1450,1,'Open 22 Nov',320,'🏛'],
+['v2','venue','The Grand Lawns','Delhi',790000,4.4,600,1200,1,'Open 28 Nov',280,'🌿'],
+['v3','venue','Serene Valley Farms','Delhi',1250000,4.8,300,1800,0,'Limited',420,'🌸'],
+['v4','venue','Marine Pearl Hall','Mumbai',1180000,4.5,500,1600,1,'Open 5 Dec',350,'🌊'],
+['v5','venue','Nawabi Gardens','Lucknow',560000,4.3,450,950,1,'Open 20 Nov',300,'🏰'],
+['v6','venue','Pink City Haveli','Jaipur',1100000,4.7,350,1700,1,'Open 12 Dec',380,'🕌'],
+['d1','dj','DJ Aarav','Delhi',85000,4.5,0,0,1,'Open',0,'🎧'],['d2','dj','Beat Factory','Mumbai',95000,4.2,0,0,0,'Limited',0,'🎶'],['d3','dj','Sur & Taal','Lucknow',60000,4.4,0,0,1,'Open',0,'🥁'],['d4','dj','Rajwada Beats','Jaipur',70000,4.3,0,0,1,'Open',0,'🎷'],
+['c1','decor','Phool & Co.','Delhi',90000,4.6,0,0,1,'Open',0,'💐'],['c2','decor','Floral Dreams','Mumbai',120000,4.4,0,0,0,'Limited',0,'🌺'],['c3','decor','Mehfil Decor','Lucknow',75000,4.2,0,0,1,'Open',0,'🪔'],['c4','decor','Gulab Studio','Jaipur',98000,4.5,0,0,1,'Open',0,'🌹']];
+const G=['#c24f3a,#e0795e','#2f66d9,#6a4fd6','#12877f,#2fb5ab'];
+const T={venue:'Hotels & Venues',dj:'DJ & Music',decor:'Decorators'};
+let occ=0,tab='venue',cmp=[],plan=['v1','d1','c1'];
+const $=i=>document.getElementById(i),L=n=>n>=100000?'₹'+(n/100000).toFixed(n%100000?2:0).replace(/\.?0+$/,'')+' lakh':'₹'+n.toLocaleString('en-IN'),R=n=>'₹'+n.toLocaleString('en-IN');
+$('date').value=new Date(Date.now()+30*864e5).toISOString().slice(0,10);
+function occs(){$('occ').innerHTML=O.map((o,i)=>`<button class="${i==occ?'on':''}" onclick="occ=${i};occs();draw()"><span>${o[1]}</span>${o[0]}</button>`).join('')}
+$('tiles').innerHTML=O.map((o,i)=>`<button class="tile" style="background:linear-gradient(135deg,${o[4]})" onclick="occ=${i};occs();draw();location.hash='results'"><i>${o[1]}</i><b>${o[2]}</b><small>${o[3]}</small></button>`).join('');
+$('tabs').innerHTML=Object.keys(T).map(k=>`<button id="t_${k}" onclick="tab='${k}';draw()">${T[k]}</button>`).join('');
+function draw(){
+ const c=$('city').value,b=+$('bud').value,bt=$('bud').selectedOptions[0].text.replace('Under ','').replace('Any budget','any budget');
+ $('rt').textContent=`${O[occ][0]} in ${c}, ${b>9e7?'any budget':'up to '+L(b)}`;
+ Object.keys(T).forEach(k=>$('t_'+k).className=k==tab?'on':'');
+ const l=V.filter(v=>v[1]==tab&&v[3]==c&&v[4]<=b);
+ $('cards').innerHTML=l.length?l.map((v,i)=>`<div class="vc"><div class="im" style="background:linear-gradient(135deg,${G[i%3]})">${v[11]}</div><div class="b"><span class="bd ${v[8]?'':'p'}">${v[8]?'VERIFIED':'PARTIAL DATA'}</span><h3>${v[2]}</h3><small>${v[1]=='venue'?'Up to '+v[6]+' guests • ':''}${v[9]}</small><div style="color:#e9a400">★ ${v[5]}</div><div class="pr">${v[1]=='venue'?R(v[7])+' <small>/plate</small>':R(v[4])}</div><div class="a"><button class="btn o ${cmp.includes(v[0])?'on':''}" onclick="tc('${v[0]}')">${cmp.includes(v[0])?'Added ✓':'Add to compare'}</button><button class="btn o ${plan.includes(v[0])?'on':''}" onclick="tp('${v[0]}')">${plan.includes(v[0])?'In plan ✓':'+ Plan'}</button></div></div></div>`).join(''):`<p class="sub">No ${T[tab].toLowerCase()} match this city and budget yet — try a higher budget or another city.</p>`;
+ drawC();drawP()}
+function tc(id){cmp=cmp.includes(id)?cmp.filter(x=>x!=id):[...cmp.slice(-2),id];draw()}
+function tp(id){plan=plan.includes(id)?plan.filter(x=>x!=id):[...plan,id];draw()}
+function drawC(){const l=cmp.map(i=>V.find(v=>v[0]==i)).filter(v=>v[1]=='venue');
+ if(l.length<2){$('cmp').innerHTML='<p class="sub" style="margin:0">Add at least 2 venues using “Add to compare” to see them side by side.</p>';return}
+ const best=(f,m)=>{const x=l.map(f);const t=m>0?Math.max(...x):Math.min(...x);return x.map(y=>y==t)};
+ const row=(n,f,fmt,m)=>{const b=m?best(f,m):[];return `<tr><td>${n}</td>${l.map((v,i)=>`<td class="${b[i]?'best':''}">${fmt(v)}</td>`).join('')}</tr>`};
+ $('cmp').innerHTML=`<table><tr><th></th>${l.map(v=>`<th>${v[2]}</th>`).join('')}</tr>`+row('Price per plate',v=>v[7],v=>R(v[7]),-1)+row('Capacity',v=>v[6],v=>v[6],1)+row('Rating',v=>v[5],v=>v[5],1)+row('Date availability',0,v=>v[9])+row('Data quality',0,v=>v[8]?'Verified':'Partial')+row('Rooms for guests',0,v=>v[10]>330?'Yes ('+Math.round(v[10]/10)+')':'Limited')+row('Estimated event total',v=>v[4],v=>R(v[4]),-1)+'</table>'}
+function drawP(){const b=+$('bud').value,cap=b>9e7?1500000:b,l=plan.map(i=>V.find(v=>v[0]==i)),s=l.reduce((a,v)=>a+v[4],0);
+ $('pl').innerHTML=l.length?l.map(v=>`<div class="pi"><span>☑ ${v[2]} <small style="color:var(--mut)">(${T[v[1]].split(' ')[0]})</small></span><b>${R(v[4])}</b></div>`).join(''):'<p class="sub">Add vendors with “+ Plan”.</p>';
+ $('tt').textContent=R(s);$('pb').style.width=Math.min(100,s/cap*100)+'%';$('pn').textContent=Math.round(s/cap*100)+'% of your '+L(cap)+' budget'+(s>cap?' — over budget!':'')}
+$('go').onclick=()=>{draw();location.hash='results'};['city','bud'].forEach(i=>$(i).onchange=draw);
+occs();draw();cmp=['v1','v2','v3'].filter(x=>1);drawC();
+</script></body></html>
